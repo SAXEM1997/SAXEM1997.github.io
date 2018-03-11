@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN） | Zyx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN）标签（空格分隔）： IPv6 Shadowsocks hosts VPN DNS 自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本">
+  <meta name="description" content="自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本方法。其中，搭建ss/ssr以及vpn的方法，其具体效果取决于所采用的VPS对IPv4/IPv6的支持情况，若服务器支持IPv4/IPv6双栈，则可以通过v4或v6任意网络环境连入，并获得服务器的双栈网络效果。">
 <meta name="keywords" content="ipv6,shadowsocks,VPN,hosts,DNS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks&#x2F;shadowsocksR, 改hosts&#x2F;改IPv6DNS, SoftEtherVPN）">
 <meta property="og:url" content="http://yoursite.com/2018/03/11/post2/index.html">
 <meta property="og:site_name" content="Zyx&#39;s Blog">
-<meta property="og:description" content="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN）标签（空格分隔）： IPv6 Shadowsocks hosts VPN DNS 自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本">
+<meta property="og:description" content="自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本方法。其中，搭建ss/ssr以及vpn的方法，其具体效果取决于所采用的VPS对IPv4/IPv6的支持情况，若服务器支持IPv4/IPv6双栈，则可以通过v4或v6任意网络环境连入，并获得服务器的双栈网络效果。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/ipv6-2.png">
 <meta property="og:image" content="http://yoursite.com/images/ipv6-3.png">
-<meta property="og:updated_time" content="2018-03-11T12:04:17.082Z">
+<meta property="og:updated_time" content="2018-03-11T12:06:09.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks&#x2F;shadowsocksR, 改hosts&#x2F;改IPv6DNS, SoftEtherVPN）">
-<meta name="twitter:description" content="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN）标签（空格分隔）： IPv6 Shadowsocks hosts VPN DNS 自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本">
+<meta name="twitter:description" content="自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本方法。其中，搭建ss/ssr以及vpn的方法，其具体效果取决于所采用的VPS对IPv4/IPv6的支持情况，若服务器支持IPv4/IPv6双栈，则可以通过v4或v6任意网络环境连入，并获得服务器的双栈网络效果。">
 <meta name="twitter:image" content="http://yoursite.com/images/ipv6-2.png">
   
     <link rel="alternative" href="/atom.xml" title="Zyx&#39;s Blog" type="application/atom+xml">
@@ -194,8 +194,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks-shadowsocksR-改hosts-改IPv6DNS-SoftEtherVPN）"><a href="#利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks-shadowsocksR-改hosts-改IPv6DNS-SoftEtherVPN）" class="headerlink" title="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN）"></a>利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN）</h1><p>标签（空格分隔）： IPv6 Shadowsocks hosts VPN DNS</p>
-<p>自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本方法。其中，搭建ss/ssr以及vpn的方法，其具体效果取决于所采用的VPS对IPv4/IPv6的支持情况，若服务器支持IPv4/IPv6双栈，则可以通过v4或v6任意网络环境连入，并获得服务器的双栈网络效果。<br><a id="more"></a></p>
+        <p>自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本方法。其中，搭建ss/ssr以及vpn的方法，其具体效果取决于所采用的VPS对IPv4/IPv6的支持情况，若服务器支持IPv4/IPv6双栈，则可以通过v4或v6任意网络环境连入，并获得服务器的双栈网络效果。<br><a id="more"></a></p>
 <p><strong><font color="brown">另外，若仅仅是想在IPv4环境下想要访问IPv6网站，可以参考<a href="http://bbs2.6plat.org/d/19" target="_blank" rel="noopener">6Plat的46模块手册</a>，发送邮件申请一个6Plat的openVPN账号，下载openVPN并按照手册登录即可。</font></strong></p>
 <p><strong><font color="red">注：以下绝大部分内容需要IPv6网络以及机器支持，请自行检查环境，简单测试可以访问<a href="http://ipv6-test.com" target="_blank" rel="noopener">ipv6-test.com</a></font></strong></p>
 <h2 id="1-改hosts-使用IPv6-DNS"><a href="#1-改hosts-使用IPv6-DNS" class="headerlink" title="1. 改hosts/使用IPv6 DNS"></a>1. 改hosts/使用IPv6 DNS</h2><p>此类方法可以访问大部分支持IPv6的网站，可以流畅观看YouTube，访问Facebook、Google等等。原理为将网站域名解析为IPv6地址，从而可以直接访问，简单便捷而且较稳定。缺点也很明显，那就是所访问的网站必须支持IPv6，现在来看，离全民IPv6还差得远哈~</p>
