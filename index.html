@@ -59,6 +59,8 @@
 	        
 				<li><a href="/search">搜索</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -119,6 +121,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -141,11 +145,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/archives">博客</a></li>
+					<li style="width: 25%"><a href="/archives">博客</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/search">搜索</a></li>
+					<li style="width: 25%"><a href="/search">搜索</a></li>
+		        
+					<li style="width: 25%"><a href="/tags">标签</a></li>
 		        
 				</ul>
 			</nav>
@@ -165,6 +171,21 @@
     <article id="post-post2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/11/post2/">利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN）</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/11/post2/" class="archive-article-date">
+  	<time datetime="2018-03-11T05:21:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-11</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks-shadowsocksR-改hosts-改IPv6DNS-SoftEtherVPN）"><a href="#利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks-shadowsocksR-改hosts-改IPv6DNS-SoftEtherVPN）" class="headerlink" title="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN）"></a>利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN）</h1><p>标签（空格分隔）： IPv6 Shadowsocks hosts VPN DNS</p>
@@ -179,6 +200,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ipv6</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">shadowsocks</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">VPN</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">hosts</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DNS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -315,7 +363,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -375,6 +423,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ipv6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">VPN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hosts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DNS</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
