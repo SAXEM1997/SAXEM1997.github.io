@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>test | Hexo</title>
+  <title>利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="test">
+  <meta name="description" content="# 利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN）自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本方法。其中，搭建ss/ssr以及vpn的方法，其具体效果取决于所采用的VPS对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks&#x2F;shadowsocksR, 改hosts&#x2F;改IPv6DNS, SoftEtherVPN）">
 <meta property="og:url" content="http://yoursite.com/2018/03/11/test/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2018-03-11T05:21:48.046Z">
+<meta property="og:description" content="# 利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN）自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本方法。其中，搭建ss/ssr以及vpn的方法，其具体效果取决于所采用的VPS对">
+<meta property="og:image" content="http://yoursite.com/2018/03/11/test/利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks-shadowsocksR-改hosts-改IPv6DNS-SoftEtherVPN）_files/5aa4b200a2098f4751000002.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/11/test/利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks-shadowsocksR-改hosts-改IPv6DNS-SoftEtherVPN）_files/5aa4b200a2098f4751000001.png">
+<meta property="og:updated_time" content="2018-03-11T07:21:23.671Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
+<meta name="twitter:title" content="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks&#x2F;shadowsocksR, 改hosts&#x2F;改IPv6DNS, SoftEtherVPN）">
+<meta name="twitter:description" content="# 利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN）自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本方法。其中，搭建ss/ssr以及vpn的方法，其具体效果取决于所采用的VPS对">
+<meta name="twitter:image" content="http://yoursite.com/2018/03/11/test/利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks-shadowsocksR-改hosts-改IPv6DNS-SoftEtherVPN）_files/5aa4b200a2098f4751000002.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -81,7 +87,7 @@
 		        
 					<a class="weibo" target="_blank" href="https://weibo.com/u/5881624605" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
@@ -122,7 +128,7 @@
 			        
 						<a class="weibo" target="_blank" href="https://weibo.com/u/5881624605" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
@@ -157,7 +163,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      test
+      利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN）
     </h1>
   
 
@@ -170,30 +176,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-      
+        <div class="note-container"><br><br># 利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN）<br><br><div class="content-html" id="leanote-content"><br><br>自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本方法。其中，搭建ss/ssr以及vpn的方法，其具体效果取决于所采用的VPS对IPv4/IPv6的支持情况，若服务器支持IPv4/IPv6双栈，则可以通过v4或v6任意网络环境连入，并获得服务器的双栈网络效果。<br><br><strong><span style="color: rgb(128, 0, 0);">另外，若仅仅是想在IPv4环境下想要访问IPv6网站，可以参考</span><a href="http://bbs2.6plat.org/d/19" target="_blank" rel="noopener">6Plat的46模块手册</a><span style="color: rgb(128, 0, 0);">，发送邮件申请一个6Plat的openVPN账号，下载openVPN并按照手册登录即可。</span></strong><br><br>#### <span style="color: rgb(255, 0, 0);">注：以下绝大部分内容需要IPv6网络以及机器支持，请自行检查环境，简单测试可以访问</span><a href="http://ipv6-test.com" target="_blank" rel="noopener">ipv6-test.com</a><br><br># <strong>1.改hosts/使用IPv6 DNS</strong><br><br>此类方法可以访问大部分支持IPv6的网站，可以流畅观看YouTube，访问Facebook、Google等等。原理为将网站域名解析为IPv6地址，从而可以直接访问，简单便捷而且较稳定。缺点也很明显，那就是所访问的网站必须支持IPv6，现在来看，离全民IPv6还差得远哈~<br><br>#### 改hosts:<br><br>#### <a href="https://raw.githubusercontent.com/lennylxx/ipv6-hosts/master/hosts" target="_blank" rel="noopener">hosts文件地址</a><br><br>将hosts文件放在C:\Windows\System32\drivers\etc\中替换，原hosts文件可以先行备份。<br><br>#### 改IPv6 DNS:<br><br>打开-网络与共享中心-更改适配器选项-找到你的IPv6网络-右键-属性-Internet协议版本6(TCP/IPv6)<br><br><img src="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks-shadowsocksR-改hosts-改IPv6DNS-SoftEtherVPN）_files/5aa4b200a2098f4751000002.png" alt=""><br><br>点击-属性-使用下面的DNS服务器地址-首选DNS，填入 <strong>240C::6644</strong><br><br><img src="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks-shadowsocksR-改hosts-改IPv6DNS-SoftEtherVPN）_files/5aa4b200a2098f4751000001.png" alt=""><br><br>保存关闭即可。<br><br><span style="color: rgb(128, 0, 0);" data-mce-style="color: #800000;"><strong>提示：两种方法效果几乎一样，只需采用其一即可，且还有另外的hosts/IPv6DNS提供，如有需要，可以前往github搜索ipv6 hosts或ipv6 DNS来查询。需要注意的是，使用IPv6 DNS方法只在IPv6环境下有效，在IPv6/IPv4双栈环境下，由于网站一般默认使用IPv4地址，解析效果会失效。而改hosts的话，无论网络环境为何，都强制解析为ipv6地址，在仅有ipv4的网络环境下，可能会出现无法访问的情况。</strong></span><br><br># <strong>2.搭建shadowsocks/shadowsocksR代理</strong><br><br>本方法以及以下VPN搭建均需要自建服务器，这里我采用的是<a href="https://www.digitalocean.com/" target="_blank" rel="noopener">DigitalOcean</a>的VPS，个人比较了下，最终发现DigitalOcean是性价比最好的，最重要的是不限流量（貌似？）<a href="https://m.do.co/c/80afb94b9865" target="_blank" rel="noopener">点击这里</a>来注册可以获得10美元（哈哈，推广一下），当然，你还可以申请到GitHub的<a href="https://education.github.com/" target="_blank" rel="noopener">Student Developer Pack</a>(需要用edu邮箱验证，不过更推荐采用上传学生证照片验证，无论哪种，审核时间都比较随缘。。虽然不用特别久，然而还是要等个1周左右的)，可以再获得50美元的购买资金(业界良心呐~)。<br><br><span data-mce-type="bookmark" id="mce_15_start" data-mce-style="overflow:hidden;line-height:0px" style="overflow:hidden;line-height:0px">﻿<span data-mce-type="bookmark" id="mce_16_start" data-mce-style="overflow:hidden;line-height:0px" style="overflow:hidden;line-height:0px">﻿</span></span><br><br></div>
+
+<p></p></div><p></p>
 
       
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
+
       
     </div>
     <div class="article-info article-info-index">
