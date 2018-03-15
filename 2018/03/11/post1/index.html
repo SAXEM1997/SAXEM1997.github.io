@@ -20,7 +20,29 @@
 <meta property="og:image" content="http://yoursite.com/images/DigitalOcean-4.png">
 <meta property="og:image" content="http://yoursite.com/images/Xshell-1.png">
 <meta property="og:image" content="http://yoursite.com/images/Xshell-2.png">
-<meta property="og:updated_time" content="2018-03-13T15:44:20.570Z">
+<meta property="og:image" content="http://yoursite.com/images/shadowsocks-1.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-1.png">
+<meta property="og:image" content="http://yoursite.com/images/DigitalOcean-4.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-2.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-3.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-4.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-5.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-6.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-7.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-8.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-9.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-10.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-11.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-10.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-12.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-13.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-14.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-15.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-16.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/11/post1/images/VPN-17.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-18.png">
+<meta property="og:image" content="http://yoursite.com/images/VPN-19.png">
+<meta property="og:updated_time" content="2018-03-15T18:56:41.833Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks&#x2F;shadowsocksR, 改hosts&#x2F;改IPv6DNS, SoftEtherVPN）">
 <meta name="twitter:description" content="自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本方法。其中，搭建ss/ssr以及vpn的方法，其具体效果取决于所采用的VPS对IPv4/IPv6的支持情况，若服务器支持IPv4/IPv6双栈，则可以通过v4或v6任意网络环境连入，并获得服务器的双栈网络效果。">
@@ -304,7 +326,27 @@
 </tr>
 </tbody>
 </table>
-<p><strong>另外一些Shadowsocks服务器的优化技巧：</strong><br>参考<a href="https://github.com/iMeiji/shadowsocks_install/wiki/shadowsocks-optimize" target="_blank" rel="noopener">shadowsocks服务器优化技巧</a></p>
+<p><strong>另外一些Shadowsocks服务器的优化技巧：</strong><br>参考<a href="https://github.com/iMeiji/shadowsocks_install/wiki/shadowsocks-optimize" target="_blank" rel="noopener">shadowsocks服务器优化技巧</a><br><br></p>
+<h3 id="shadowsocks的Windows端配置"><a href="#shadowsocks的Windows端配置" class="headerlink" title="shadowsocks的Windows端配置"></a><strong>shadowsocks的Windows端配置</strong></h3><p>请到<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">shadowsocks Github官网</a>下载最新版本安装并运行，在右下角任务栏找到纸飞机图标，右键-服务器-编辑服务器-新建<br><img src="/images/shadowsocks-1.png" alt="shadowsocks-1"><br>按照服务器端安装时配置填入相应信息，完成后连接即可，服务器IP可以填你VPS的IPv4/IPv6地址，如若想校园网免流上网请填IPv6地址，下同。</p>
+<h3 id="shadowsocks的Android端配置"><a href="#shadowsocks的Android端配置" class="headerlink" title="shadowsocks的Android端配置"></a><strong>shadowsocks的Android端配置</strong></h3><p>请到APKPure或同类应用商店搜索”shadowsocks”下载app，配置同Windows端。</p>
+<h3 id="shadowsocksR的Windows端配置"><a href="#shadowsocksR的Windows端配置" class="headerlink" title="shadowsocksR的Windows端配置"></a><strong>shadowsocksR的Windows端配置</strong></h3><p>Github下载地址已失效，请自行寻找下载源或在本文下方留言，也可以<a href="mailto:SAXEM1997@163.com" target="_blank" rel="noopener">Mail我</a>。配置方法同shadowsocks配置，不过多了”协议”与”混淆”，这些都在服务器端安装的时候配置好了，按照服务器端配置填写即可，代理规则详见<a href="https://saxem1997.github.io/2018/03/15/post2/" target="_blank" rel="noopener">ShadowsocksR代理规则配置详解</a></p>
+<h3 id="shadowsocksR的Android端配置"><a href="#shadowsocksR的Android端配置" class="headerlink" title="shadowsocksR的Android端配置"></a><strong>shadowsocksR的Android端配置</strong></h3><p>请到APKPure或同类应用商店搜索”shadowsocks”下载app，配置同Windows端，可以使用ssr链接或者二维码扫描快速共享。<br><br></p>
+<h2 id="3-搭建SoftEther-VPN-Server"><a href="#3-搭建SoftEther-VPN-Server" class="headerlink" title="3. 搭建SoftEther VPN Server"></a><strong>3. 搭建SoftEther VPN Server</strong></h2><p>shadowsocks其实已经可以满足需要，但如果想要完全的网络代理环境，以及虚拟专用网功能，则需要搭建一个VPN。<br>想要搭建VPN，首先你得选一个工具，对比OpenVPN那些，个人觉得一个日本大学做的SoftEther VPN相当好用，不但配置起来方便，而且服务器的管理也可以通过相应工具在远程管理，不用每次都SSH到服务器端了。<br><br></p>
+<h3 id="安装SoftEther-VPN-Server"><a href="#安装SoftEther-VPN-Server" class="headerlink" title="安装SoftEther VPN Server"></a><strong>安装SoftEther VPN Server</strong></h3><p>首先，使用Xshell远程SSH到服务器端，具体可以参照之前搭建Shadowsocks过程。</p>
+<p>然后访问<a href="http://www.softether-download.com/cn.aspx?product=softether" target="_blank" rel="noopener">SoftEther下载官网</a>（因为这个东西在墙外，如果你的服务器在国内且没有梯子的话，你可以用lantern psiphon之类的东西把它下载下来，再上传到git，然后gitclone），按照你的VPS配置选取对应VPN Server后，复制下载链接，我这里使用的版本是4.25。<br><img src="/images/VPN-1.png" alt="SoftEther-1"><br>接着在Xshell的远程终端中，输入”wget [你复制的链接]”来下载安装包(以下代码均使用4.25版本为例)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget http://www.softether-download.com/files/softether/v4.25-9656-rtm-2018.01.15-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.25-9656-rtm-2018.01.15-linux-x64-64bit.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p>接着解压所下载的tar包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -zxvf softether-vpnserver-v4.25-9656-rtm-2018.01.15-linux-x64-64bit.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p>接下来是一些必备库的安装，如果已存在下列库，可以跳过此步骤<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install make</span><br><span class="line">$ apt-get install gcc-multilib</span><br><span class="line">$ apt-get install build-essential</span><br></pre></td></tr></table></figure></p>
+<p>必备库安装完后就可以执行make安装了，首先进入vpn server目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> vpnserver</span><br></pre></td></tr></table></figure></p>
+<p>然后执行make<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make</span><br></pre></td></tr></table></figure></p>
+<p>过程中会有三次让你输入数字选择选项配置，输入3次1就行了。<br>至此安装过程已完成，如果安装成功会提示”The preparation of SoftEther VPN Server is completed !”，如果出现Error，可以到stackoverflow上输入你的错误查一查，理论上是都可以解决的。<br>现在只需打开VPN Server即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./vpnserver start</span><br></pre></td></tr></table></figure></p>
+<p>之后想要<font color="red">关闭</font>VPN Server的话，可以cd 到VPN Server目录，再输入停止命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> vpnserver</span><br><span class="line">$ ./vpnserver stop</span><br></pre></td></tr></table></figure></p>
+<p>另外，需要开放VPS的443端口，可以在DigitalOcean里的防火墙里设置，可以参考之前shadowsocks时的防火墙配置。<br><img src="/images/DigitalOcean-4.png" alt="Inbound Rules"><br>接下来的配置阶段基本上都可以在PC端远程完成了。<br><br></p>
+<h3 id="远程配置SoftEther-VPN-Server"><a href="#远程配置SoftEther-VPN-Server" class="headerlink" title="远程配置SoftEther VPN Server"></a><strong>远程配置SoftEther VPN Server</strong></h3><p>这里以windows系统为例，先到之前的<a href="https://www.softether.org/5-download" target="_blank" rel="noopener">SoftEther下载官网</a>下载windows端的SofEther VPN Server Manager(服务器管理工具)<br><img src="/images/VPN-2.png" alt="SoftEther-2"><br>安装的时候，选择仅管理工具即可<br><img src="/images/VPN-3.png" alt="SoftEther-3"><br>安装完毕后打开<br><img src="/images/VPN-4.png" alt="SoftEther-4"><br>此管理工具实质亦为远程连接终端，先创建连接，先点击”新设置”<br><img src="/images/VPN-5.png" alt="SoftEther-5"><br>填入你喜欢的设置名，在”主机名”一栏里填入你VPS的IPv4/IPv6地址，点击”确定”<br><img src="/images/VPN-6.png" alt="SoftEther-6"><br>第一次配置会要求你设置一个管理员密码，创建完后点击”连接”<br><img src="/images/VPN-7.png" alt="SoftEther-7"><br>选择vpn的其他高级配置并点击”关闭”，之后的弹出框点击确认就行，接着进入IPsec/L2TP/EtherIP/L2TPv3设置界面<br><img src="/images/VPN-8.png" alt="SoftEther-8"><br>点击”确定”来到管理器界面<br><img src="/images/VPN-9.png" alt="SoftEther-9"><br>点击”管理虚拟HUB”<br><img src="/images/VPN-10.png" alt="SoftEther-10"><br>点击”管理用户”，在管理用户界面里点击”新建”<br><img src="/images/VPN-11.png" alt="SoftEther-11"><br>输入用户名和密码即可，其他的不用动，点击”确定”，回到”管理虚拟HUB”页面<br><img src="/images/VPN-10.png" alt="SoftEther-10"><br>点击右下边的”虚拟NAT和虚拟DHCP服务器”<br><img src="/images/VPN-12.png" alt="SoftEther-12"><br>点击”启用SecureNAT”，再点击”SecureNAT配置”<br><img src="/images/VPN-13.png" alt="SoftEther-13"><br>MAC地址不要改，其他的如果不会配置的话可以参照上图，填写完成后点击”确定”，至此服务端配置便已完成。<br><br></p>
+<h3 id="PC端连接VPN"><a href="#PC端连接VPN" class="headerlink" title="PC端连接VPN"></a><strong>PC端连接VPN</strong></h3><p>这里介绍两种方式，一种为windows自带的VPN，不过我此方式在我的PC上经测试失败(可以自行测试一下)，还一种是使用SoftEther VPN Clent连接。</p>
+<h4 id="1-使用windows自带的VPN"><a href="#1-使用windows自带的VPN" class="headerlink" title="1.使用windows自带的VPN"></a><strong>1.使用windows自带的VPN</strong></h4><p>点击打开win10右下角任务栏的通知界面-VPN<br><img src="/images/VPN-14.png" alt="SoftEther-14"><br>打开选择”添加VPN连接”<br><img src="/images/VPN-15.png" alt="SoftEther-15"><br>按上图配置完毕，点击”连接”即可<br><br></p>
+<h4 id="2-使用SoftEther-VPN-Client"><a href="#2-使用SoftEther-VPN-Client" class="headerlink" title="2.使用SoftEther VPN Client"></a><strong>2.使用SoftEther VPN Client</strong></h4><p>同样前往<a href="http://www.softether-download.com/cn.aspx?product=softether" target="_blank" rel="noopener">SoftEther下载官网</a><br><img src="/images/VPN-16.png" alt="SoftEther-16"><br>选择SoftEther VPN Client下载，安装后打开<br><img src="images/VPN-17.png" alt="SoftEther-17"><br>点击”添加新的VPN连接”<br><img src="/images/VPN-18.png" alt="SoftEther-18"><br>按上图填入配置，点击”确定”完成创建，双击连接到VPN<br><img src="/images/VPN-19.png" alt="SoftEther-19"><br>至此成功连接到VPN，可以百度搜索”IP”查看自己的IP是否为VPS的IP地址了<br><br></p>
+<h3 id="Android-IOS端连接VPN"><a href="#Android-IOS端连接VPN" class="headerlink" title="Android/IOS端连接VPN"></a><strong>Android/IOS端连接VPN</strong></h3><p>使用系统自带的VPN功能，按照上面windows端自带VPN设置样例配置并连接即可。<br><br></p>
+<h2 id="4-shadowsocks-shadowsocksR等与VPN的对比"><a href="#4-shadowsocks-shadowsocksR等与VPN的对比" class="headerlink" title="4. shadowsocks/shadowsocksR等与VPN的对比"></a><strong>4. shadowsocks/shadowsocksR等与VPN的对比</strong></h2><p>详见<a href="https://saxem1997.github.io/2018/03/15/post3/" target="_blank" rel="noopener">shadowsocks等代理与VPN的区别与对比</a></p>
 <hr>
 <h3 id="参考源"><a href="#参考源" class="headerlink" title="参考源"></a><strong>参考源</strong></h3><p><a href="https://xyzardq.github.io/2017/03/07/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BAshadowsocks%E5%8F%8A%E4%BC%98%E5%8C%96/" target="_blank" rel="noopener">xyzardQ</a><br><a href="https://teddysun.com/" target="_blank" rel="noopener">秋水逸冰</a><br><a href="https://teddysun.com/451.html" target="_blank" rel="noopener">一键脚本那些事儿</a><br><a href="https://github.com/iMeiji/shadowsocks_install" target="_blank" rel="noopener">Github_shadowsocks_install</a><br><a href="https://github.com/91yun" target="_blank" rel="noopener">91yun_Github</a></p>
 
@@ -411,11 +453,6 @@
       </div>
     </a>
   
-  
-    <a href="/2018/03/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -556,6 +593,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">readme</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hosts</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IPv6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">建站</a>
               </li>
             
             <div class="clearfix"></div>
