@@ -5,48 +5,49 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://www.iridesc.cn">
   <title>利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks/shadowsocksR, 改hosts/改IPv6DNS, SoftEtherVPN） | Zyx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本方法。其中，搭建ss/ssr以及vpn的方法，其具体效果取决于所采用的VPS对IPv4/IPv6的支持情况，若服务器支持IPv4/IPv6双栈，则可以通过v4或v6任意网络环境连入，并获得服务器的双栈网络效果。">
 <meta name="keywords" content="shadowsocks,VPN,ipv6,VPS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks&#x2F;shadowsocksR, 改hosts&#x2F;改IPv6DNS, SoftEtherVPN）">
-<meta property="og:url" content="http://yoursite.com/2018/03/11/post1/index.html">
+<meta property="og:url" content="http://www.iridesc.cn/2018/03/11/post1/index.html">
 <meta property="og:site_name" content="Zyx&#39;s Blog">
 <meta property="og:description" content="自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本方法。其中，搭建ss/ssr以及vpn的方法，其具体效果取决于所采用的VPS对IPv4/IPv6的支持情况，若服务器支持IPv4/IPv6双栈，则可以通过v4或v6任意网络环境连入，并获得服务器的双栈网络效果。">
-<meta property="og:image" content="http://yoursite.com/images/ipv6-2.png">
-<meta property="og:image" content="http://yoursite.com/images/ipv6-3.png">
-<meta property="og:image" content="http://yoursite.com/images/DigitalOcean-4.png">
-<meta property="og:image" content="http://yoursite.com/images/Xshell-1.png">
-<meta property="og:image" content="http://yoursite.com/images/Xshell-2.png">
-<meta property="og:image" content="http://yoursite.com/images/shadowsocks-1.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-1.png">
-<meta property="og:image" content="http://yoursite.com/images/DigitalOcean-4.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-2.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-3.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-4.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-5.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-6.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-7.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-8.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-9.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-10.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-11.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-10.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-12.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-13.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-14.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-15.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-16.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-17.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-18.png">
-<meta property="og:image" content="http://yoursite.com/images/VPN-19.png">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.iridesc.cn/images/ipv6-2.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/ipv6-3.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/DigitalOcean-4.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/Xshell-1.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/Xshell-2.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/shadowsocks-1.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-1.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/DigitalOcean-4.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-2.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-3.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-4.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-5.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-6.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-7.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-8.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-9.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-10.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-11.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-10.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-12.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-13.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-14.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-15.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-16.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-17.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-18.png">
+<meta property="og:image" content="http://www.iridesc.cn/images/VPN-19.png">
 <meta property="og:updated_time" content="2018-06-04T18:05:53.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用校园网IPv6环境实现科学上网及免流量上网基本方法介绍（shadowsocks&#x2F;shadowsocksR, 改hosts&#x2F;改IPv6DNS, SoftEtherVPN）">
 <meta name="twitter:description" content="自从弄了几个服务器，加上校园网按流量收费的蛋疼模式，我开始打起了IPv6的注意，在这里给大家介绍以下利用IPv6环境进行科学上网/免流量上网的基本方法。其中，搭建ss/ssr以及vpn的方法，其具体效果取决于所采用的VPS对IPv4/IPv6的支持情况，若服务器支持IPv4/IPv6双栈，则可以通过v4或v6任意网络环境连入，并获得服务器的双栈网络效果。">
-<meta name="twitter:image" content="http://yoursite.com/images/ipv6-2.png">
+<meta name="twitter:image" content="http://www.iridesc.cn/images/ipv6-2.png">
   
     <link rel="alternative" href="/atom.xml" title="Zyx&#39;s Blog" type="application/atom+xml">
   
@@ -75,7 +76,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://www.iridesc.cn/homepage/images/myico1.ico" class="js-avatar">
+			<img src="/images/myavatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">ZyxLyn</a></h1>
@@ -127,7 +128,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://www.iridesc.cn/homepage/images/myico1.ico" class="js-avatar">
+				<img src="/images/myavatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">ZyxLyn</h1>
@@ -430,7 +431,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/03/11/post1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.iridesc.cn/2018/03/11/post1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -489,7 +490,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2018/03/11/post1/",
+  id: "http://www.iridesc.cn/2018/03/11/post1/",
   owner: 'SAXEM1997',
   repo: 'GitComments',
   oauth: {

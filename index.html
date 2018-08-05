@@ -5,15 +5,19 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://www.iridesc.cn">
   <title>Zyx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Personal blog">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Zyx&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://www.iridesc.cn/index.html">
 <meta property="og:site_name" content="Zyx&#39;s Blog">
+<meta property="og:description" content="Personal blog">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Zyx&#39;s Blog">
+<meta name="twitter:description" content="Personal blog">
   
     <link rel="alternative" href="/atom.xml" title="Zyx&#39;s Blog" type="application/atom+xml">
   
@@ -42,7 +46,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://www.iridesc.cn/homepage/images/myico1.ico" class="js-avatar">
+			<img src="/images/myavatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">ZyxLyn</a></h1>
@@ -94,7 +98,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://www.iridesc.cn/homepage/images/myico1.ico" class="js-avatar">
+				<img src="/images/myavatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">ZyxLyn</h1>
@@ -168,49 +172,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="Game-MineSweeper-on-Java-with-version-1-0-0"><a href="#Game-MineSweeper-on-Java-with-version-1-0-0" class="headerlink" title="Game MineSweeper on Java with version 1.0.0."></a>Game MineSweeper on Java with version 1.0.0.</h3><p>最近没事用Java做了个扫雷，在这分享下，<a href="https://github.com/SAXEM1997/MineSweeper" target="_blank" rel="noopener">Github代码</a></p>
-<h3 id="游戏界面-采用30-17网格布局-包括："><a href="#游戏界面-采用30-17网格布局-包括：" class="headerlink" title="游戏界面(采用30*17网格布局)包括："></a>游戏界面(采用30*17网格布局)包括：</h3><ol>
-<li>显示剩余雷数区域(2*1)；</li>
-<li>显示最快记录区域(2*1)；</li>
-<li>显示本局游戏计时区域(单独线程)(2*1)：</li>
-<li>30<em>16的游戏方格(30</em>16)；</li>
-</ol>
-<h3 id="游戏内容"><a href="#游戏内容" class="headerlink" title="游戏内容:"></a>游戏内容:</h3><ol>
-<li>在30*16方格内通过点击鼠标扫雷，左键为打开区域，右键为标记区域，左右同按为探索周围区域，若正确探明所有区域则获胜；</li>
-<li>当游戏结束时，会显示所有雷区，并关闭网格内鼠标监听器,点击“重来”方格可以重新游戏；</li>
-<li>剩余雷数会实时的显示在面板上；</li>
-<li>最快记录会在获胜时实时比较更新；</li>
-<li>游戏结束或关闭时，会保存最快记录数据至工程目录下的TimeRecord.txt文本文档中，如果不存在，则创建该文档；</li>
-<li>游戏开始时如果存在TimeRecord.txt，则会读入其中数据并显示于最快记录上；</li>
-<li>计时器通过单独线程，每秒+1，在重新游戏时重置；</li>
-</ol>
-<h3 id="游戏包含四个类："><a href="#游戏包含四个类：" class="headerlink" title="游戏包含四个类："></a>游戏包含四个类：</h3><table>
-<thead>
-<tr>
-<th>类名</th>
-<th>注释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Main类</td>
-<td>类中主要实现了游戏主窗口的设置与主面板等的定义；</td>
-</tr>
-<tr>
-<td>Pane类</td>
-<td>类中包含了游戏原理的实现，以及添加方格、最快记录,记录文档读写、点击监听器功能等；</td>
-</tr>
-<tr>
-<td>Block类</td>
-<td>此类为方格类，包含了方格组件的相关设置，颜色变化，数字显示等功能；</td>
-</tr>
-<tr>
-<td>Timer类</td>
-<td>包含了计时器的相关定义与实现及对应线程的建立与开启；</td>
-</tr>
-</tbody>
-</table>
-<h3 id="预览："><a href="#预览：" class="headerlink" title="预览："></a>预览：</h3><p><img src="https://github.com/SAXEM1997/MineSweeper/MineSweeper1.png" alt="MineSweeper1"></p>
-
+        
+          <a class="article-more-a" href="/2018/08/05/post8/#more">more >></a>
+        
       
 
       
